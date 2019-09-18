@@ -17,7 +17,7 @@ class App extends Component {
     .then(users => this.setState({monsters: users}));
   }
 
-  handleChange=(e)=> {
+  handleChange = e => {
     this.setState({ searchField : e.target.value})
   }
   render() {
@@ -25,6 +25,7 @@ class App extends Component {
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLocaleLowerCase()))
     return (
       <div className="App">
+      <h1>Monsters Rolodex</h1>
       <SearchBox 
         placeholder="search monsters" 
         handleChange={this.handleChange} 
